@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface RegistroAccesoRepository extends JpaRepository<RegistroAcceso, Long> {
+public interface RegistroAccesoRepository extends JpaRepository<RegistroAcceso, Integer> {
     //List<RegistroAcceso> findAllByOrderByHoraAccesoDESC();
 }
 

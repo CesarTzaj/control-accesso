@@ -13,13 +13,14 @@ import lombok.Setter;
 public class Lector {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "LectorId")
+    private Integer id;
     
     @Column(name = "identificador")
     private String tarjetaRfid;
 
     @ManyToOne
-    @JoinColumn(name = "puerta_id")
+    @JoinColumn(name = "puerta_id", foreignKey = @ForeignKey(name = "FK_Lector_Puerta"))
     private Puerta puerta;
 
     // Getters y setters

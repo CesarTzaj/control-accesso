@@ -16,8 +16,8 @@ public class AccesoController {
     private AccesoService accesoService;
 
     @PostMapping("/validar")
-    public ResponseEntity<String> validarAcceso(@RequestParam String lectorId, @RequestParam Long usuarioId) {
-        boolean accesoPermitido = accesoService.validarYRegistrarAcceso(lectorId, usuarioId);
+    public ResponseEntity<String> validarAcceso(@RequestParam String lectorId, @RequestParam Long puertaId) {
+        boolean accesoPermitido = accesoService.validarYRegistrarAcceso(lectorId, puertaId);
         if (accesoPermitido) {
             return ResponseEntity.ok("Acceso permitido");
         } else {

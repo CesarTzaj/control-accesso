@@ -3,7 +3,6 @@ package com.registro.control_acceso.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 import lombok.Data;
 
 
@@ -12,14 +11,15 @@ import lombok.Data;
 public class RegistroAcceso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "registroAccesoId")
+    private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id")
+    @JoinColumn(name = "usuario_id", foreignKey = @ForeignKey(name = "FK_RegistroAcceso_Usurio"))
     private Usuario usuario;
 
     @ManyToOne
-    @JoinColumn(name = "puerta_id")
+    @JoinColumn(name = "puerta_id", foreignKey = @ForeignKey(name = "FK_RegistroAccesso_Puerta"))
     private Puerta puerta;
 
     private LocalDateTime horaAcceso;

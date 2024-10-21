@@ -4,6 +4,6 @@ import com.registro.control_acceso.entity.Lector;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface LectorRepository extends JpaRepository<Lector, Long> {
+public interface LectorRepository extends JpaRepository<Lector, Integer> {
     Optional<Lector> findByTarjetaRfid(String tarjetarfid);
 }

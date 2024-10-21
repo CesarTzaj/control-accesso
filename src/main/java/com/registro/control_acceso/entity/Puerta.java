@@ -10,7 +10,8 @@ import lombok.Data;
 public class Puerta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "puretaID")
+    private Integer id;
 
     private String nombre;
 

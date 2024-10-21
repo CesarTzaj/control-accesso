@@ -12,7 +12,10 @@ public interface RegistroAccesoMapper {
     @Mappings({
         @Mapping(source = "horaAcceso", target = "date", dateFormat = "dd-MM-yyyy HH:mm:ss"),
         @Mapping(source = "usuario.nombre", target = "nombre"),
-        @Mapping(source = "puerta.nombre", target = "puerta")
+        @Mapping(source = "puerta.nombre", target = "puerta"),
+        @Mapping(target = "horaEntrada", ignore = true),
+        @Mapping(target = "horaSalida", ignore = true),
+        @Mapping(target = "duracion", ignore = true)
     })
     RegistroAccesoDTO toRegistroAccesoDTO(RegistroAcceso registroAcceso);
     List<RegistroAccesoDTO> toRegistroAccesoDTOs(List<RegistroAcceso> registroAcceso);
