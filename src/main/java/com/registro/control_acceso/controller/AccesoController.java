@@ -10,13 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/acceso")
+  @CrossOrigin(origins = "http://localhost:3000") 
 public class AccesoController {
 
     @Autowired
     private AccesoService accesoService;
 
     @PostMapping("/validar")
-    public ResponseEntity<String> validarAcceso(@RequestParam String lectorId, @RequestParam Long puertaId) {
+    public ResponseEntity<String> validarAcceso(@RequestParam String lectorId, @RequestParam int puertaId) {
         boolean accesoPermitido = accesoService.validarYRegistrarAcceso(lectorId, puertaId);
         if (accesoPermitido) {
             return ResponseEntity.ok("Acceso permitido");

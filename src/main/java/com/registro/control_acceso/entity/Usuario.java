@@ -23,5 +23,5 @@ public class Usuario {
     )
     private List<Puerta> puertasPermitidas;
 
-    // Getters y setters
+    
 }

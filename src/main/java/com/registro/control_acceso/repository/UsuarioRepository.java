@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-    Optional<Usuario> findByPuertasPermitidas_Id(Long puertaId);
+    Optional<Usuario> findByPuertasPermitidas_Id(int puertaId);
+    
 }
